@@ -16,7 +16,7 @@ El uso de sockets es fundamental para lograr una experiencia fluida y dinámica,
 ## Repositorio Base
 
 Se trabajó con un repositorio desde cero para una mejor práctica, todo el código fuente y la documentación de este proyecto se encuentran en el siguiente repositorio de GitHub:  
-[https://github.com/melanymoreira/WebChat_Moreira_Melany.git](https://github.com/melanymoreira/WebChat_Moreira_Melany.git)
+[https://github.com/melanymoreira/WebChat-MelanyMoreira.git](https://github.com/melanymoreira/WebChat-MelanyMoreira.git)
 
 ---
 
