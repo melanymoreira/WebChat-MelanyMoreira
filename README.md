@@ -79,7 +79,7 @@ Sigue estos pasos detallados para ejecutar el proyecto localmente en tu computad
 Abre una terminal y ejecuta:
 
 ```bash
-git clone https://github.com/melanymoreira/WebChat_Moreira_Melany.git
+git clone https://github.com/melanymoreira/WebChat-MelanyMoreira.git
 cd WebChat_Moreira_Melany
 ```
 ![Clonar el repositorio](src/public/img/Clonar-Repositorio.png)
@@ -152,4 +152,4 @@ http://localhost:3000
 
 ---
 
-> **Repositorio:** [https://github.com/melanymoreira/WebChat_Moreira_Melany.git](https://github.com/melanymoreira/WebChat_Moreira_Melany.git)
+> **Repositorio:** [https://github.com/melanymoreira/WebChat-MelanyMoreira.git](https://github.com/melanymoreira/WebChat-MelanyMoreira.git)
