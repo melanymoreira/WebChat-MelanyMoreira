@@ -2,7 +2,6 @@
 
 **Estudiante:** Melany Rosmery Moreira Zambrano  
 **Fecha de entrega:** 30 mayo de 2025
-  _Captura donde se ve la lista de usuarios con los iconos de estado._
 
 ---
 
