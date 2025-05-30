@@ -1,9 +1,10 @@
-const express = require('express');
-const { createServer } = require('http');
-const realTimeServer = require('./realTimeServer');
-const path = require('path');
-const cookieParser = require('cookie-parser');
+const express = require('express'); // Importamos express
+const { createServer } = require('http');// Importamos createServer de http para crear un servidor HTTP
+const realTimeServer = require('./realTimeServer'); // Importamos nuestro servidor en tiempo real
+const path = require('path'); // Importamos path para manejar rutas de archivos
+const cookieParser = require('cookie-parser'); // Importamos cookie-parser para manejar cookies
 
+// Importamos las rutas
 const app = express();
 const httpServer = createServer(app);
 
@@ -19,7 +20,7 @@ app.get('/in', (req, res) => {
 app.get('/register.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'register.html'));
 });
-app.use(cookieParser());
+app.use(cookieParser()); // Para manejar cookies
 
 // Rutas
 app.use(require('./routes'));
