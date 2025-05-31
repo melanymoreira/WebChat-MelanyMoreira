@@ -7,9 +7,8 @@
 
 ## Introducción
 
-Este proyecto consiste en el desarrollo de una aplicación web de chat en tiempo real, utilizando tecnologías modernas como **Node.js**, **Express**, **Socket.io** y **Bootstrap**. El objetivo principal es demostrar cómo los sockets permiten la comunicación instantánea entre usuarios, una característica esencial en aplicaciones como chats, juegos en línea y sistemas de notificaciones.
-
-El uso de sockets es fundamental para lograr una experiencia fluida y dinámica, ya que permite que los mensajes se transmitan y reciban al instante, sin necesidad de recargar la página. Este proyecto busca no solo implementar la funcionalidad básica de un chat, sino también mejorar la experiencia del usuario con un diseño atractivo, responsivo y características adicionales como el uso de emojis y notificaciones.
+El objetivo principal de este laboratorio es implementar una sección que muestre la lista de usuarios conectados en tiempo real, similar al diseño de aplicaciones como WhatsApp. Esta funcionalidad permite a los participantes visualizar quiénes están activos en el chat en todo momento, mejorando la interacción y la experiencia de usuario dentro de la aplicación.  
+El desarrollo se realizó utilizando *Node.js*, *Express*, *Socket.io* y *Bootstrap*, enfocando todos los esfuerzos en lograr una visualización clara, dinámica y atractiva de los usuarios conectados.
 
 ---
 
@@ -20,67 +19,66 @@ Todo el código fuente y la documentación de este proyecto se encuentran en el 
 
 ---
 
-## Implementación del Proyecto
-
-### Estructura del Código
-
-El proyecto está organizado de la siguiente manera para mantener una separación clara entre la lógica del servidor, la interfaz de usuario y los recursos estáticos:
+## Estructura del Proyecto
 
 ```
-src/
-  public/
-    js/
-      register.js      # Lógica para el registro de usuario
-      script.js        # Lógica principal del chat y emojis
-    css/
-      style.css        # Estilos personalizados para el chat
-    img/
-      Foto.jpg         # Imagen de perfil por defecto
-  views/
-    index.html         # Interfaz principal del chat
-    register.html      # Formulario de registro de usuario
-  routes/
-    index.js           # Rutas principales de Express
-  index.js             # Servidor principal Express
-  realTimeServer.js    # Lógica de Socket.io
-package.json
-README.md
+WebChat-MelanyMoreira/
+│
+├── src/
+│   ├── index.js                # Servidor principal Express
+│   ├── realTimeServer.js       # Lógica de Socket.io
+│   ├── usersSocket.js          # Gestión de usuarios conectados
+│   ├── middlewares/
+│   │   └── isLoggedIn.js       # Middleware para validar acceso
+│   ├── routes/
+│   │   └── index.js            # Rutas principales de Express
+│   ├── views/
+│   │   ├── index.html          # Interfaz principal del chat
+│   │   └── register.html       # Formulario de registro de usuario
+│   └── public/
+│       ├── js/
+│       │   ├── register.js     # Lógica para el registro de usuario
+│       │   └── script.js       # Lógica principal del chat y usuarios conectados
+│       ├── css/
+│       │   └── style.css       # Estilos personalizados para el chat
+│       └── img/
+│           ├── Foto.jpg        # Imagen de perfil por defecto
+│           ├── Registro-Usuario.png
+│           ├── Chat-TiempoReal.png
+│           └── Usuarios-Conectados.png
+├── package.json
+└── README.md
 ```
 
-- **index.js:** Configura el servidor Express, las rutas para servir los archivos HTML y los recursos estáticos, y conecta con Socket.io.
-- **realTimeServer.js:** Maneja la lógica de Socket.io para recibir y emitir mensajes en tiempo real entre los clientes.
-- **views/index.html:** Interfaz principal del chat, con diseño tipo WhatsApp, campo de mensajes, botón de enviar.
-- **views/register.html:** Formulario de registro para ingresar el nombre de usuario antes de acceder al chat.
-- **public/js/script.js:** Lógica del chat: conexión a Socket.io, envío y recepción de mensajes.
-- **public/js/register.js:** Lógica para guardar el nombre de usuario en una cookie y redirigir al chat.
-- **public/css/style.css:** Estilos personalizados para mejorar la apariencia tipo WhatsApp.
+---
 
-### Mejoras Realizadas al Diseño del Chat
+## Mejoras Realizadas al Diseño del Chat
 
-- **Framework Bootstrap:** Se utilizó Bootstrap 5 para lograr un diseño moderno, limpio y responsivo, facilitando la adaptación a dispositivos móviles y de escritorio.
-- **Interfaz tipo WhatsApp:** Se replicó la estructura visual de WhatsApp, con colores suaves y una experiencia de usuario familiar.
-- **Colores y tipografía:** Se eligieron colores agradables y tipografía clara para mejorar la legibilidad y la estética general guíandonos en WhatsApp.
-- **Espaciado y organización:** Se mejoró el espaciado entre elementos y la organización visual del chat para una experiencia más cómoda.
-- **Diseño responsivo:** El chat se adapta automáticamente a diferentes tamaños de pantalla, permitiendo su uso en computadoras, tablets y smartphones.
+- **Lista de usuarios conectados en tiempo real:** Se implementó una sección dedicada que muestra dinámicamente los usuarios conectados, permitiendo ver quiénes están activos en el chat, al estilo de WhatsApp.
+- **Actualización automática:** La lista se actualiza automáticamente cada vez que un usuario entra o sale del chat, sin necesidad de recargar la página.
+- **Diseño visual atractivo:** Se utilizó Bootstrap y estilos personalizados para que la lista de usuarios conectados sea clara, visible y fácil de identificar.
+- **Integración con la interfaz:** La lista se muestra en una barra lateral, similar a aplicaciones de mensajería populares, facilitando la interacción.
 
-### Características Adicionales
+---
 
-- **Nombre de Usuario:** Antes de ingresar al chat, el usuario debe registrarse con un nombre, lo que personaliza la experiencia y permite identificar a cada participante.
-- **Foto de usuario:** Se muestra una imagen de perfil junto al nombre en cada mensaje, mejorando la identificación visual de los participantes.
+## Características Adicionales
+
+- **Visualización de usuarios conectados:** Los usuarios pueden ver en tiempo real quiénes están activos en el chat.
+- **Notificación de cambios:** Cuando un usuario se conecta o desconecta, la lista se actualiza instantáneamente para todos los participantes.
+- **Diseño responsivo:** La sección de usuarios conectados se adapta a diferentes tamaños de pantalla, manteniendo la usabilidad en dispositivos móviles y de escritorio.
+- **Registro de usuario:** Antes de acceder al chat, el usuario debe registrarse con un nombre, que aparecerá en la lista de conectados.
 
 ---
 
 ## Instrucciones de Ejecución
 
-Sigue estos pasos detallados para ejecutar el proyecto localmente en tu computadora:
+Sigue estos pasos para ejecutar el proyecto localmente:
 
 ### 1. Clona el repositorio
 
-Abre una terminal y ejecuta:
-
-```bash
+```bash 
 git clone https://github.com/melanymoreira/WebChat-MelanyMoreira.git
-cd WebChat_Moreira_Melany
+cd WebChat-MelanyMoreira
 ```
 ![Clonar el repositorio](src/public/img/Clonar-Repositorio.png)
 
@@ -117,13 +115,14 @@ http://localhost:3000
 ```
 ![Acceso en el Navegador](src/public/img/Acceso-Navegador.png)
 
-### 5. Uso de la aplicación
+---
 
-- **Registro:** Al ingresar, verás el formulario de registro. Escribe tu nombre de usuario y haz clic en "Entrar al chat".
-- **Chat:** Accederás a la sala de chat, donde podrás enviar mensajes, usar emojis (botón 😊) y recibir notificaciones de nuevos mensajes.
-- **Emojis:** Haz clic en el botón de emoji para abrir el selector y elige el emoji que desees insertar en tu mensaje.
-- **Notificaciones:** Si tienes la pestaña en segundo plano y alguien envía un mensaje, recibirás una notificación en tu escritorio.
-- **Cambiar usuario:** Si deseas cambiar de usuario, borra la cookie `username` desde las herramientas de desarrollador del navegador y recarga la página.
+## Uso de la aplicación
+
+- **Registro:** Ingresa tu nombre de usuario y haz clic en "Entrar al chat". Este nombre aparecerá en la lista de usuarios conectados.
+- **Visualización de usuarios conectados:** En la barra lateral, podrás ver en tiempo real la lista de todos los usuarios que están conectados al chat, similar a WhatsApp.
+- **Actualización dinámica:** Cuando un usuario entra o sale, la lista se actualiza automáticamente para todos los participantes.
+- **Interacción:** Puedes identificar fácilmente quiénes están activos y disponibles para chatear.
 
 ---
 
@@ -135,14 +134,16 @@ http://localhost:3000
 ### Chat en Tiempo Real
 ![Chat en tiempo real](src/public/img/Chat-TiempoReal.png)
 
+### Lista de Usuarios Conectados
+![Usuarios conectados](src/public/img/Usuarios-Conectados.png)
+
 ---
 
 ## Conclusiones
 
-Durante el desarrollo de este proyecto aprendí la importancia de los sockets para la comunicación en tiempo real, así como la integración de tecnologías modernas como Bootstrap para mejorar la experiencia del usuario.  
-Una de las principales dificultades fue la gestión de rutas y recursos estáticos en Express, especialmente al separar los archivos HTML en la carpeta `views` y los recursos en `public`. Esto se solucionó configurando correctamente las rutas en el servidor y utilizando middlewares para validar el acceso de los usuarios.  
-También fue un reto lograr un diseño responsivo y atractivo, pero el uso de Bootstrap facilitó este proceso.  
-Este proyecto me permitió consolidar conocimientos sobre Node.js, Express, Socket.io y buenas prácticas de desarrollo web con el buen uso de la distribución de archivos.
+La implementación de una sección que muestra la lista de usuarios conectados en tiempo real, inspirada en el diseño de WhatsApp, permitió comprender y aplicar los conceptos de comunicación instantánea y actualización dinámica de la interfaz.  
+Esta funcionalidad mejora significativamente la experiencia de usuario, ya que brinda visibilidad sobre la presencia de los participantes y fomenta la interacción.  
+El laboratorio consolidó conocimientos sobre Node.js, Express, Socket.io y el manejo de eventos en tiempo real, demostrando la importancia de la actualización automática y la visualización clara de los usuarios conectados en aplicaciones de chat modernas.
 
 ---
 
