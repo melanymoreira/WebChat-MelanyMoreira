@@ -1,7 +1,7 @@
 # Chat en Tiempo Real con Sockets
 
 **Estudiante:** Melany Rosmery Moreira Zambrano  
-**Fecha de entrega:** 30 mayo de 2025
+**Fecha de entrega:** 30 mayo de 2025 
 
 ---
 
